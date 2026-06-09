@@ -1,0 +1,18 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="40" y1="40" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22C55E"/>
+      <stop offset="0.6" stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+  <!-- rounded mini-icon (marketing lockup) -->
+  <rect x="40" y="40" width="280" height="280" rx="64" fill="url(#bg)"/>
+  <g transform="translate(40 40) scale(0.273)">
+    <path d="M 678.18 345.82 A 235 235 0 1 0 678.18 678.18"
+          fill="none" stroke="#FFFFFF" stroke-width="118" stroke-linecap="round"/>
+    <circle cx="747" cy="512" r="49" fill="#FFFFFF"/>
+  </g>
+  <!-- wordmark -->
+  <text x="372" y="225" font-family="Verdana, 'DejaVu Sans', Arial, sans-serif" font-size="180" font-weight="700" letter-spacing="-5" fill="#15803D">calman</text>
+</svg>

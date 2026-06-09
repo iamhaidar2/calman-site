@@ -1,0 +1,16 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22C55E"/>
+      <stop offset="0.6" stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+  <!-- Full-bleed square (opaque) — the OS applies the rounded mask itself -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- Calorie-ring "C": 270 deg arc, gap on the right, rounded caps -->
+  <path d="M 678.18 345.82 A 235 235 0 1 0 678.18 678.18"
+        fill="none" stroke="#FFFFFF" stroke-width="118" stroke-linecap="round"/>
+  <!-- progress / tracking node in the opening -->
+  <circle cx="747" cy="512" r="49" fill="#FFFFFF"/>
+</svg>
