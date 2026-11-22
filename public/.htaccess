@@ -1,0 +1,39 @@
+# calman.ai runs on Hostinger as plain files: the web app is set to
+# Framework "Other", Output directory "public", no Entry file, so no Node
+# process runs on the server. These rules do what server.js does there;
+# server.js is only for previewing the site locally (npm start).
+
+Options -Indexes
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Clean URLs: /privacy serves privacy.html (the .html address still works).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Single-page site: any other address that is not a file shows the home page,
+# like server.js.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L]
+
+# Hostinger caches files for 7 days by default; set our own times instead.
+<IfModule mod_expires.c>
+  ExpiresActive Off
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Pages, styles and scripts: browsers check for a newer copy on every visit,
+  # so a push to GitHub shows up straight away.
+  <FilesMatch "\.(html|css|js|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Images and fonts: kept for a day.
+  <FilesMatch "\.(svg|png|jpe?g|webp|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
